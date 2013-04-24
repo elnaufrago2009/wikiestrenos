@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>Listing generos</h1>
+</div>
+
+<div class="row">
+<div class="span6">
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th>#id</th>
+      <th>Nombre</th>
+      <th>Acciones</th>
+    </tr>
+
+    <% @generos.each do |genero| %>
+        <tr>
+          <td><%= genero.id %></td>
+          <td><%= genero.nombre %></td>
+          <td>
+            <%= link_to 'Ver', genero, :class => "btn" %>
+            <%= link_to 'Edit', edit_genero_path(genero), :class => "btn" %>
+            <%= link_to 'Destroy', genero, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn" %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+</div>
+</div>
+
+<div class="form-actions">
+  <%= link_to 'New Genero', new_genero_path, :class => "btn btn-primary" %>
+</div>
+
+
+

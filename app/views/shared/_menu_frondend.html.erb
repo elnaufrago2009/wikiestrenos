@@ -1,0 +1,24 @@
+    <!-- Menu FrondEnd -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Inicio</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <% @generos.each do |genero|  %>
+              <li><a href="/inicios/generos?genero=<%= genero.id %>"><%= genero.nombre %> </a></li>
+              <% end %>
+
+            </ul>
+            <form class="navbar-search pull-right" action="">
+              <input type="text" class="search-query span2" placeholder="Buscar Pelicula">
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div><!-- End MenuFrondEnd -->

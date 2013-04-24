@@ -1,0 +1,113 @@
+<%= form_for(@review, :html => {:class => "form-horizontal well", :multipart => true }) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <div class="control-label">
+        <%= f.label :titulo %>
+    </div>
+    <div class="controls">
+        <%= f.text_field :titulo, :class => "span5" %>
+    </div>
+  </div>
+
+    <div class="control-group">
+      <div class="control-label">
+        <%= f.label :genero %>
+      </div>
+      <div class="controls">
+        <%= f.collection_select(:genero_id, Genero.all, :id, :nombre, :prompt => 'Seleccion Genero') %>
+      </div>
+    </div>
+
+  <div class="control-group">
+    <div class="control-label">
+        <%= f.label :resumen %>
+    </div>
+    <div class="controls">
+        <%= f.text_area :resumen, :class => "span5", :rows => "3" %>
+    </div>
+  </div>
+
+    <div class="control-group">
+      <div class="control-label">
+        <%= f.label :imagen %>
+      </div>
+      <div class="controls">
+        <%= f.file_field :rimage %>
+      </div>
+    </div>
+
+  <div class="control-group">
+    <div class="control-label">
+        <%= f.label :contenido %>
+    </div>
+    <div class="controls">
+        <%= f.cktext_area :contenido, :toolbar => 'Easy', :width => 800, :height => 300, :language => 'es', :enterMode => 2 %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="control-label">
+        <%= f.label :fecha %>
+    </div>
+    <div class="controls">
+        <%= f.date_select :fecha, :order => [:year, :month ] %>
+    </div>
+  </div>
+
+    <div class="control-group">
+      <div class="control-label">
+        <%= f.label :duracion %>
+      </div>
+      <div class="controls">
+        <%= f.time_select :duracion %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="control-label">
+        <%= f.label :calidad %>
+      </div>
+      <div class="controls">
+        <%= f.select(:calidad, [
+                ['240p ( baja )'],
+                ['360p ( media )'],
+                ['480p ( media buena )'],
+                ['720p ( HD )']
+        ]) %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="control-label">
+        <%= f.label :idioma %>
+      </div>
+      <div class="controls">
+        <%= f.select(:idioma, [
+                ['Español', 'Español'],
+                ['Español Latino','Español Latino'],
+                ['Subtitulado a Español', 'SubTituloado a Español'],
+                ['Ingles', 'Ingles']
+        ]) %>
+      </div>
+    </div>
+
+
+
+  <div class="control-group">
+    <div class="controls">
+        <%= f.submit :class => "btn" %>
+    </div>
+  </div>
+
+<% end %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @genero.nombre %>
+</p>
+
+<p>
+  <b>Resumen:</b>
+  <%= @genero.resumen %>
+</p>
+
+
+<%= link_to 'Edit', edit_genero_path(@genero) %> |
+<%= link_to 'Back', generos_path %>

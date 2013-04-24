@@ -1,0 +1,25 @@
+<ul class="breadcrumb">
+  <li><a href="/reviews">Home</a> <span class="divider">/</span></li>
+  <li class="active"><%= @review.titulo %></li>
+</ul>
+<p id="notice"><%= notice %></p>
+<h1><%= @review.titulo %></h1>
+<p class="lead"><%= @review.resumen %></p>
+<p><%= image_tag @review.rimage_url(:thumb).to_s %></p>
+<p class="clearfix"><%= raw(@review.contenido) %></p>
+
+<p>
+  <b>Anho:</b>
+  <%= @review.anho %>
+</p>
+
+<p>
+  <b>Hit:</b>
+  <%= @review.hit %>
+</p>
+
+<div class="form-actions">
+  <%= link_to raw('<i class="icon-edit icon-white"></i> Edit'), edit_review_path(@review), :class => "btn btn-primary" %>
+  <%= link_to raw('<i class="icon-arrow-left icon-white"></i> Regresar'), reviews_path, :class => "btn btn-primary" %>
+</div>
+
