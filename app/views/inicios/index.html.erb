@@ -1,6 +1,12 @@
+<ul class="breadcrumb">
+  <li><a href="#">Home</a> <span class="divider">/</span></li>
+  <li><a href="#">Library</a> <span class="divider">/</span></li>
+  <li class="active">Data</li>
+</ul>
+
 <div class="row">
   <div class="span7">
-    <h1>Ultimas Peliculas</h1>
+    <h2>Ultimos Estrenos <small> de Peliculas</small></h2>
   </div>
   <div class="span5">
     <div class="pagination-right">
@@ -10,6 +16,11 @@
 </div>
 
 <hr>
+
+<div class="alert">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>WikiEstrenos!</strong> Todas las peliculas son 100% gratis, mirar los colores para ver si estan activas hay veces las borran.
+</div>
 
 <div class="row">
   <div class="span8">
@@ -33,8 +44,8 @@
                <b>Calidad</b> <%= review.calidad %><br>
                <b>Genero</b> <%= review.genero_id %><br>
                <b>Resumen :</b> <br><%= review.resumen %>
-               "><%= review.id %>. <i class="icon-th-large icon-white"></i></a>
-            <span style="font-size: 18px;"> <a href="/inicios/ver/<%= review.id %>"><%= review.titulo %></a></span>
+               "><%= review.id %>. <i class="icon-comment icon-white"></i></a>
+            <span style="font-size: 18px;"> <a href="/inicios/ver/<%= review.id %>"><%= review.titulo[0,20] %></a></span>
           </div>
         </div>
       </li>
