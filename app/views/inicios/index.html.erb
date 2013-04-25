@@ -29,10 +29,10 @@
                data-content="
                <b>Fecha Estreno:</b> <%= review.fecha %><br>
                <b>Idioma:</b> <%= review.idioma %><br>
-               <b>Duracion</b> <%= review.duracion %><br>
+               <b>Duracion</b> <%= review.duracion.strftime("%H:%M") %><br>
                <b>Calidad</b> <%= review.calidad %><br>
                <b>Genero</b> <%= review.genero_id %><br>
-               <b>Resumen :</b> <%= review.resumen %>
+               <b>Resumen :</b> <br><%= review.resumen %>
                "><%= review.id %>. <i class="icon-th-large icon-white"></i></a>
             <span style="font-size: 18px;"> <a href="/inicios/ver/<%= review.id %>"><%= review.titulo %></a></span>
           </div>

@@ -26,8 +26,9 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'ckeditor',  '~> 3.7.3'
 gem 'carrierwave'
-gem 'fog'
 gem 'rmagick'
+gem 'fog'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
