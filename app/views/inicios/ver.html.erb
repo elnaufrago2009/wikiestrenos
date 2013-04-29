@@ -1,34 +1,19 @@
+<ul class="breadcrumb">
+  <li><a href="/">Home</a> <span class="divider">/</span></li>
+  <li class="active"><%= @review.titulo %></li>
+</ul>
+
 <div class="page-header">
-  <h1><%= @review.titulo %></h1>
+  <h2><%= @review.titulo %></h2>
 </div>
 
-<p class="lead"><%= @review.resumen %></p>
 
-<p>
-  <script type="text/javascript"><!--
-  google_ad_client = "ca-pub-5852042324891789";
-  /* estrenos 336 x 280 */
-  google_ad_slot = "5637548505";
-  google_ad_width = 336;
-  google_ad_height = 280;
-  //-->
-  </script>
-  <script type="text/javascript"
-          src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-  </script>
-</p>
-
-
-
-
-
-
+<p><b>Fecha Estreno :</b> <%= @review.fecha %></p>
+<p><b>Duracion :</b> <%= @review.duracion %></p>
+<p><b>Idioma :</b> <%= @review.idioma %></p>
+<p><b>Calidad :</b> <%= @review.calidad %></p>
+<p><b>Resumen:</b> <%= @review.resumen %></p>
 <p><%= image_tag @review.rimage_url(:real).to_s %></p>
+<p><b>Contenido:</b> <%= raw(@review.contenido) %></p>
 
-
-<p style="font-size: 20px; line-height: 35px;"><%= raw(@review.contenido) %></p>
-
-<p>
-  <a href="/" class="btn"><i class="icon-arrow-left"></i> Atraz</a>
-</p>
 
