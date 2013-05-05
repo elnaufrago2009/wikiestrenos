@@ -35,6 +35,10 @@ gem 'ckeditor',  '~> 3.7.3'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
+gem 'devise'
+gem 'cancan'
+gem 'rolify'
+
 
 
 # To use ActiveModel has_secure_password
