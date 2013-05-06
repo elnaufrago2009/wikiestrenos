@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
+  load_and_authorize_resource
   layout "backend"
   def index
     @reviews = Review.paginate(:page => params[:page], :per_page => 9, :conditions => ['lower (titulo) like ?', "%#{params[:search]}%"]).order("id Desc")

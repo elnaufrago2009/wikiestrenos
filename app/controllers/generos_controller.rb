@@ -1,6 +1,7 @@
 class GenerosController < ApplicationController
   # GET /generos
   # GET /generos.json
+  load_and_authorize_resource
   layout "backend"
   def index
     @generos = Genero.all
